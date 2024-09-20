@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phishing Detection</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body
+    style="
+      background-image: url('static/background_image.jpg');
+      background-size: cover;
+      height: 60em;
+    "
+  >
+    <h1
+      style="
+        text-align: center;
+        padding-top: 130px;
+        font-weight: bolder;
+        color: rgb(255, 255, 255);
+      "
+    >
+      Phishing Detection Project
+    </h1>
+    <div
+      style="
+        text-align: center;
+        padding-left: 300px;
+        padding-right: 300px;
+        padding-top: 100px;
+      "
+    >
+      <form action="/submit_form" method="POST">
+        <div class="mb-3">
+          <label
+            for="exampleInputEmail1"
+            class="form-label"
+            style="
+              font-weight: bold;
+              color: rgb(255, 255, 255);
+              font-size: 22px;
+              background-color: rgba(0, 0, 0, 0.259);
+            "
+            >Add your URL to detect Phishing</label
+          >
+          <input
+            name="url"
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter your URL"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-success"
+          style="width: 20%; font-weight: bold"
+        >
+          Submit
+        </button>
+      </form>
+      {% if prediction %}
+      <div class="mt-3">
+        <p style="font-weight: bold; color: aliceblue; font-size: 20px">
+          Prediction: {{ prediction }}
+        </p>
+      </div>
+      {% endif %}
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
